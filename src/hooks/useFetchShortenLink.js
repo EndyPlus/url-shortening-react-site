@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 export function useFetchShortenLink(link) {
   const [shortenLink, setShortenLink] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState({ errorMsg: null, isError: false });
+
+  function removeError() {
+    setError({ errorMsg: null, isError: false });
+  }
 
   useEffect(() => {
     async function fetchFunc() {
       try {
-        setIsError(false);
-        setError(null);
+        removeError();
         setIsLoading(true);
 
         if (link.trim().length === 0) {
@@ -29,15 +31,14 @@ export function useFetchShortenLink(link) {
         );
 
         if (!res.ok) {
-          throw new Error("REQUEST IS NOT OK!");
+          throw new Error("Invalid URL");
         }
 
         const data = await res.json();
 
         setShortenLink(data.result_url);
       } catch (err) {
-        setIsError(true);
-        setError(err);
+        setError({ errorMsg: err.message, isError: true });
         setShortenLink(null);
       } finally {
         setIsLoading(false);
@@ -49,5 +50,5 @@ export function useFetchShortenLink(link) {
     }
   }, [link]);
 
-  return [shortenLink, isLoading, isError, error];
+  return { shortenLink, isLoading, error, setError, removeError };
 }

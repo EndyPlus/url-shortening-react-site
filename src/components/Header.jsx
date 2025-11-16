@@ -16,7 +16,7 @@ export default function Header() {
         <button className="text-grayish-500 font-bolder mr-10 text-base">
           Login
         </button>
-        <CtaButton styles="px-6 text-base">Sign Up</CtaButton>
+        <CtaButton styles="px-6 py-2 rounded-full text-base">Sign Up</CtaButton>
       </div>
     </header>
   );

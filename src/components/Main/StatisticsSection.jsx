@@ -30,8 +30,8 @@ const data = [
 
 export default function StatisticsSection() {
   return (
-    <section className="bg-boost container-padding flex flex-col items-center pt-12 pb-44">
-      <div className="mt-40 mb-36 flex flex-col text-center">
+    <section className="bg-boost container-padding flex flex-col items-center pb-44">
+      <div className="mt-28 mb-36 flex flex-col text-center">
         <h2 className="text-grayish-950 font-bolder mb-6 text-4xl">
           Advanced Statistics
         </h2>

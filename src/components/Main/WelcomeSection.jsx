@@ -13,7 +13,9 @@ export default function WelcomeSection() {
           <br />
           insights on how your links are performing.
         </p>
-        <CtaButton styles="w-max py-2.5 px-10">Get Started</CtaButton>
+        <CtaButton styles="w-max py-2.5 px-10 rounded-full">
+          Get Started
+        </CtaButton>
       </div>
       <IllustrationWorking styles="absolute -right-150" />
     </section>
