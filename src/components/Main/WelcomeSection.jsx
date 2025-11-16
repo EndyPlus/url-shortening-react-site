@@ -8,14 +8,14 @@ export default function WelcomeSection() {
         <h1 className="text-grayish-900 font-bolder text-[75px]/[5.5rem]">
           More than just shorter links
         </h1>
-        <p className="text-grayish-500 mt-1 mb-8 text-xl/[2.5rem]">
+        <p className="text-grayish-500 mt-1 mb-8 text-xl/[2.25rem]">
           Build your brand’s recognition and get detailed
           <br />
           insights on how your links are performing.
         </p>
-        <CtaButton styles="w-50">Get Started</CtaButton>
+        <CtaButton styles="w-max py-2.5 px-10">Get Started</CtaButton>
       </div>
-      <IllustrationWorking />
+      <IllustrationWorking styles="absolute -right-150" />
     </section>
   );
 }

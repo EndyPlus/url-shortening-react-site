@@ -1,10 +1,10 @@
-export default function IllustrationWorking() {
+export default function IllustrationWorking({ styles }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1000"
+      width="1200"
       height="482"
-      className="absolute -right-1/4"
+      className={styles}
     >
       <defs>
         <linearGradient id="a" x1="0%" x2="100%" y1="50%" y2="50%">

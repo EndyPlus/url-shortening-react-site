@@ -3,22 +3,20 @@ import CtaButton from "./UI/CtaButton";
 
 export default function Header() {
   return (
-    <header className="container-padding flex items-center py-12">
+    <header className="container-padding flex items-center pt-12 pb-16">
       <a href="/">
         <Logo />
       </a>
-      <nav className="text-grayish-500 font-bolder ml-12">
+      <nav className="text-grayish-500 font-bolder ml-10 flex gap-8 text-base">
         <a href="/">Features</a>
-        <a href="/" className="ml-5">
-          Pricing
-        </a>
-        <a href="/" className="ml-5">
-          Resources
-        </a>
+        <a href="/">Pricing</a>
+        <a href="/">Resources</a>
       </nav>
       <div className="ml-auto">
-        <button className="text-grayish-500 font-bolder mr-5">Login</button>
-        <CtaButton>Sign Up</CtaButton>
+        <button className="text-grayish-500 font-bolder mr-10 text-base">
+          Login
+        </button>
+        <CtaButton styles="px-6 text-base">Sign Up</CtaButton>
       </div>
     </header>
   );

@@ -1,14 +1,19 @@
+import IconBrandRecognition from "../../assets/icons/IconBrandRecognition";
+import IconDetailedRecords from "../../assets/icons/IconDetailedRecords";
+import IconFullyCustomizable from "../../assets/icons/IconFullyCustomizable";
 import StatisticsCard from "../UI/StatisticsCard";
 
 const data = [
   {
     id: 0,
+    icon: <IconBrandRecognition size="2.5rem" />,
     heading: "Brand Recognition",
     description:
       "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
   },
   {
     id: 1,
+    icon: <IconDetailedRecords size="2.5rem" />,
     heading: "Detailed Records",
     description:
       "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
@@ -16,6 +21,7 @@ const data = [
 
   {
     id: 2,
+    icon: <IconFullyCustomizable size="2.5rem" />,
     heading: "Fully Customizable",
     description:
       "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
@@ -24,40 +30,23 @@ const data = [
 
 export default function StatisticsSection() {
   return (
-    <section className="bg-boost flex flex-col items-center pt-42 pb-32">
-      <div className="flex w-1/4 flex-col">
-        <h2>Advanced Statistics</h2>
-        <p>
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
+    <section className="bg-boost container-padding flex flex-col items-center pt-12 pb-44">
+      <div className="mt-40 mb-36 flex flex-col text-center">
+        <h2 className="text-grayish-950 font-bolder mb-6 text-4xl">
+          Advanced Statistics
+        </h2>
+        <p className="text-grayish-500">
+          Track how your links are performing across the web with
+          <br />
+          our advanced statistics dashboard.
         </p>
       </div>
-      <div className="flex justify-center">
-        {data.map((cardData) => (
-          <StatisticsCard key={cardData.id} cardData={cardData} />
-        ))}
-        {/* <div>
-          <h3>Brand Recognition</h3>
-          <p>
-            Boost your brand recognition with each click. Generic links don’t
-            mean a thing. Branded links help instil confidence in your content.
-          </p>
-        </div>
-
-        <div>
-          <h3>Detailed Records</h3>
-          <p>
-            Gain insights into who is clicking your links. Knowing when and
-            where people engage with your content helps inform better decisions.
-          </p>
-        </div>
-        <div>
-          <h3>Fully Customizable</h3>
-          <p>
-            Improve brand awareness and content discoverability through
-            customizable links, supercharging audience engagement.
-          </p>
-        </div> */}
+      <div className="relative flex items-center">
+        <StatisticsCard cardData={data[0]} />
+        <div className="bg-bluish-400 h-2 w-8 -translate-y-10"></div>
+        <StatisticsCard cardData={data[1]} />
+        <div className="bg-bluish-400 h-2 w-8 -translate-y-10"></div>
+        <StatisticsCard cardData={data[2]} />
       </div>
     </section>
   );
