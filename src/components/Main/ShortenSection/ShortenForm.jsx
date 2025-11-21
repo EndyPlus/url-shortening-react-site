@@ -35,26 +35,27 @@ export default function ShortenForm({ updateLinks }) {
     <form
       onSubmit={handleSubmitForm}
       id="shorten-form"
-      className="bg-purplish-950 relative flex w-full rounded-lg bg-[url(./src/assets/images/bg-shorten-desktop.svg)] bg-right bg-no-repeat px-14 py-12"
+      className="bg-purplish-950 xs:px-14 xs:py-12 relative flex w-full flex-col rounded-lg bg-[url(./src/assets/images/bg-shorten-desktop.svg)] bg-right bg-no-repeat p-8 md:flex-row"
     >
       <input
         type="text"
         name="fullLink"
         placeholder="Shorten a link here..."
-        className="grow rounded-xl bg-white py-4 pl-6"
+        className="xs:text-basic xxs:py-4 xxs:pl-6 xxs:text-base grow rounded-md bg-white py-3 pl-4 text-sm"
         ref={inputRef}
         onInput={removeError}
       />
+      {error.isError && (
+        <i className="text-reddish-400 xxs:text-base xs:text-basic bottom-2.5 text-sm md:absolute">
+          {error.errorMsg}
+        </i>
+      )}
       <CtaButton
-        styles={`rounded-md ml-8 py-4 px-10 ${isLoading ? "cursor-not-allowed" : "cursor-pointer"} `}
+        styles={`xs:text-basic xxs:text-base text-sm rounded-md xs:self-center md:mt-0 xxs:mt-8 mt-4 md:ml-8 xxs:py-4 py-3 xxs:px-10 px-8 ${isLoading ? "cursor-not-allowed" : "cursor-pointer"} `}
         disabled={isLoading}
       >
         Shorten It!
       </CtaButton>
-
-      {error.isError && (
-        <i className="text-reddish-400 absolute bottom-2.5">{error.errorMsg}</i>
-      )}
     </form>
   );
 }

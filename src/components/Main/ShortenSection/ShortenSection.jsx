@@ -10,7 +10,7 @@ export default function ShortenSection() {
   }
 
   return (
-    <section className="container-padding relative mt-32 flex flex-col items-center">
+    <section className="container-padding ls:mt-16 xs:mt-12 xxs:mt-10 relative mt-8 flex flex-col items-center md:mt-14">
       <div className="bg-boost absolute -z-10 h-full w-full translate-y-18"></div>
       <ShortenForm updateLinks={handleUpdateLinks} />
       <ShortenList links={links} />

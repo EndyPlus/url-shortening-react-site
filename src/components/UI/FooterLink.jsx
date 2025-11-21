@@ -4,9 +4,9 @@ export default function FooterLink({ children }) {
   }
 
   return (
-    <li className="mb-2 last:mb-0">
+    <li className="xxs:mb-2 mb-1.5 last:mb-0">
       <a
-        className="text-grayish-500 cursor-pointer text-base"
+        className="text-grayish-500 cursor-pointer text-base text-nowrap"
         onClick={handleClick}
       >
         {children}

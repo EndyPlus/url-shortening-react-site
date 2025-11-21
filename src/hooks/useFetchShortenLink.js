@@ -31,6 +31,10 @@ export function useFetchShortenLink(link) {
         );
 
         if (!res.ok) {
+          if (res.status === 500) {
+            throw new Error("Server Error. Please try again later.");
+          }
+
           throw new Error("Invalid URL");
         }
 

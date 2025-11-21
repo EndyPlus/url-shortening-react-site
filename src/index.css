@@ -24,6 +24,12 @@
 
   --font-weight-basic: 500;
   --font-weight-bolder: 700;
+
+  /* SCREEN SIZES */
+  --breakpoint-xlg: 75rem; /* 1200px */
+  --breakpoint-ls: 59.5rem; /* 952px */
+  --breakpoint-xs: 35rem; /* 560px */
+  --breakpoint-xxs: 28.5rem; /* 456px */
 }
 
 @layer base {
@@ -44,5 +50,9 @@
 }
 
 .container-padding {
-  @apply px-42;
+  @apply px-8 sm:px-12 md:px-12 lg:px-20 xl:px-42;
+}
+
+.burger-item {
+  @apply bg-grayish-500 h-1 w-full;
 }
