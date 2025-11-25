@@ -4,12 +4,13 @@ import handleScrollTo from "../../utils/handleScrollTo";
 export default function BoostSection() {
   const bgImage =
     window.innerWidth >= 768
-      ? "bg-[url(./src/assets/images/bg-boost-desktop.svg)]"
-      : "bg-[url(./src/assets/images/bg-boost-mobile.svg)]";
+      ? "/url-shortening-react-site/bg-boost-desktop.svg"
+      : "/url-shortening-react-site/bg-boost-mobile.svg";
 
   return (
     <section
-      className={`container-padding bg-purplish-950 ${bgImage} flex flex-col items-center bg-center bg-no-repeat py-16`}
+      style={{ backgroundImage: `url(${bgImage})` }}
+      className={`container-padding bg-purplish-950 flex flex-col items-center bg-center bg-no-repeat py-16`}
     >
       <h2 className="font-bolder xs:text-4xl xxs:text-3xl xxs:mb-9 mb-5 text-xl text-white">
         Boost your links today

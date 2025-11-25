@@ -37,14 +37,15 @@ export default function ShortenForm({ updateLinks }) {
 
   const bgImage =
     window.innerWidth >= 768
-      ? "bg-[url(./src/assets/images/bg-shorten-desktop.svg)]"
-      : "bg-[url(./src/assets/images/bg-shorten-mobile.svg)]";
+      ? "/url-shortening-react-site/bg-shorten-desktop.svg"
+      : "/url-shortening-react-site/bg-shorten-mobile.svg";
 
   return (
     <form
       onSubmit={handleSubmitForm}
       id="shorten-form"
-      className={`bg-purplish-950 xs:px-14 xs:py-12 relative flex w-full flex-col rounded-lg ${bgImage} bg-right bg-no-repeat p-8 md:flex-row`}
+      style={{ backgroundImage: `url(${bgImage})` }}
+      className={`bg-purplish-950 xs:px-14 xs:py-12 rounded-lgbg-right relative flex w-full flex-col bg-no-repeat p-8 md:flex-row`}
     >
       <input
         type="text"
