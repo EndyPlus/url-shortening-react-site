@@ -17,7 +17,7 @@ export default function WelcomeSection() {
           Get Started
         </CtaButton>
       </div>
-      <IllustrationWorking styles="relative ls:absolute w-[400px] xxs:w-[450px] xs:w-[500px] sm:w-[600px] md:w-[800px] ls:w-[500px] lg:w-[650px] xlg:w-[1200px] -right-[5vw] xxs:-right-[20vw]  xs:-right-[30vw] sm:-right-[25vw] ls:-right-50 xlg:-right-100" />
+      <IllustrationWorking styles="relative select-none ls:absolute w-[400px] xxs:w-[450px] xs:w-[500px] sm:w-[600px] md:w-[800px] ls:w-[500px] lg:w-[650px] xlg:w-[1200px] -right-[5vw] xxs:-right-[20vw]  xs:-right-[30vw] sm:-right-[25vw] ls:-right-50 xlg:-right-100" />
     </section>
   );
 }

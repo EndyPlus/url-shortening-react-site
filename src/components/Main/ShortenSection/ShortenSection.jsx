@@ -3,10 +3,18 @@ import ShortenForm from "./ShortenForm";
 import ShortenList from "./ShortenList";
 
 export default function ShortenSection() {
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState(
+    JSON.parse(localStorage.getItem("linksList")) || [],
+  );
 
   function handleUpdateLinks(linkArr) {
-    setLinks((prevLinksArr) => [linkArr, ...prevLinksArr]);
+    setLinks((prevLinksArr) => {
+      const newLinksArr = [linkArr, ...prevLinksArr];
+
+      localStorage.setItem("linksList", JSON.stringify(newLinksArr));
+
+      return newLinksArr;
+    });
   }
 
   return (

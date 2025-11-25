@@ -1,14 +1,17 @@
+import { useState } from "react";
 import ShortenListItem from "./ShortenListItem";
 
 export default function ShortenList({ links }) {
-  const generateRandomId = () => Math.floor(Math.random() * 99999999);
+  const [copiedItemId, setCopiedItemId] = useState(null);
 
   return (
     <ul className="xxs:mt-7 mt-5 w-full">
-      {links.map((linkArr) => (
+      {links.map((linkObj) => (
         <ShortenListItem
-          key={`item-${generateRandomId()}`}
-          linkData={linkArr}
+          key={linkObj.id}
+          linkData={linkObj}
+          copiedItemId={copiedItemId}
+          onCopy={setCopiedItemId}
         />
       ))}
     </ul>

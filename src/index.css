@@ -37,6 +37,17 @@
     font-size: 100%;
   }
 
+  #mobileClipboard {
+    position: fixed;
+    left: -999rem;
+    top: -999rem;
+
+    outline: none;
+    border: none;
+    opacity: 0;
+    z-index: -999;
+  }
+
   html,
   body,
   #root {
@@ -55,4 +66,8 @@
 
 .burger-item {
   @apply bg-grayish-500 h-1 w-full;
+}
+
+.default-effects {
+  @apply duration-100 ease-in hover:scale-105 active:scale-95;
 }

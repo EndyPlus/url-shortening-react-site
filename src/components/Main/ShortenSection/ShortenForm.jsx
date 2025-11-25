@@ -24,24 +24,33 @@ export default function ShortenForm({ updateLinks }) {
 
   useEffect(() => {
     if (shortenLink) {
-      updateLinks([link, shortenLink]);
+      updateLinks({
+        id: Math.floor(Math.random() * 99999999),
+        fullLink: link,
+        shortenLink,
+      });
     }
 
     return () => setLink(null);
     // eslint-disable-next-line
   }, [shortenLink]);
 
+  const bgImage =
+    window.innerWidth >= 768
+      ? "bg-[url(./src/assets/images/bg-shorten-desktop.svg)]"
+      : "bg-[url(./src/assets/images/bg-shorten-mobile.svg)]";
+
   return (
     <form
       onSubmit={handleSubmitForm}
       id="shorten-form"
-      className="bg-purplish-950 xs:px-14 xs:py-12 relative flex w-full flex-col rounded-lg bg-[url(./src/assets/images/bg-shorten-desktop.svg)] bg-right bg-no-repeat p-8 md:flex-row"
+      className={`bg-purplish-950 xs:px-14 xs:py-12 relative flex w-full flex-col rounded-lg ${bgImage} bg-right bg-no-repeat p-8 md:flex-row`}
     >
       <input
         type="text"
         name="fullLink"
         placeholder="Shorten a link here..."
-        className="xs:text-basic xxs:py-4 xxs:pl-6 xxs:text-base grow rounded-md bg-white py-3 pl-4 text-sm"
+        className={`xs:text-basic xxs:py-4 xxs:pl-6 xxs:text-base grow rounded-md border-3 bg-white py-3 pl-4 text-sm ${error.isError ? "border-reddish-400 outline-reddish-400" : "border-transparent"}`}
         ref={inputRef}
         onInput={removeError}
       />
