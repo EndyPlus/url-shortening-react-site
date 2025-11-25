@@ -9,7 +9,7 @@ export default function WelcomeSection() {
           More than just <br /> shorter links
         </h1>
         <p className="text-grayish-500 xs:text-xl/[2.25rem] mt-4 mb-6 text-base sm:mt-1 sm:mb-8">
-          Build your brand’s recognition and get detailed
+          Build your brand’s recognition and get detailed{" "}
           <br className="xxs:block hidden" />
           insights on how your links are performing.
         </p>
